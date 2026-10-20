@@ -1,0 +1,544 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<partial-response><changes><update id="rf:searchResults"><![CDATA[<ul class="ui-dataview-list-container"><li class="ui-dataview-row">
+
+    <div class="card result-card" style="position:relative;">
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+
+
+
+        <div class="rc-title">
+            <div class="rc-funder">
+                Clare Hall
+            </div>
+            <h3 class="rc-fund">
+                Motrescu-Mayes Bursary in Media and Visual Studies
+            </h3>
+            <div class="rc-year-value">
+
+                
+
+                
+                    
+                
+
+                <div class="rc-value"><span class="">£1,000</span>
+                    (one-off)
+                
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="rc-funder-logo"><div id="rf:searchResults:200:j_idt195:j_idt196" class="ui-outputpanel ui-widget provider-logo provider-logo-small-rec "><img id="rf:searchResults:200:j_idt195:j_idt197" src="/javax.faces.resource/dynamiccontent.properties.xhtml?ln=primefaces&amp;v=8.0&amp;pfdrid=24e6b6ef59708eda7150df2bfbc7d47c&amp;pfdrt=sc&amp;providerId=CH&amp;pfdrid_c=false&amp;uid=428b48da-b66f-4b7c-99f2-6f9a6d98fe95" alt="" /></div>
+        </div>
+
+
+
+        <div class="rc-summary"><table cellpadding="4">
+<tbody>
+<tr>
+<td><div id="rf:searchResults:200:j_idt201" class="ui-outputpanel ui-widget rc-key">
+                    <i class="far fa-calendar-alt fa-lg"></i></div></td>
+<td><div id="rf:searchResults:200:j_idt203" class="ui-outputpanel ui-widget rc-val">
+                    Closes:
+                    
+            Same as funding deadline for the course
+        </div></td>
+</tr>
+<tr>
+<td><div id="rf:searchResults:200:j_idt217" class="ui-outputpanel ui-widget rc-key">
+                    <i class="fas fa-check-double fa-lg"></i></div></td>
+<td><div id="rf:searchResults:200:j_idt219" class="ui-outputpanel ui-widget rc-val">
+                    Eligibility:
+                    
+                    
+                    
+                        <span class="pgf-tag pgf-tag2">College</span>
+                        <span class="pgf-tag pgf-tag2">Course</span></div></td>
+</tr>
+</tbody>
+</table>
+
+
+        </div><span id="rf:searchResults:200:j_idt224" class="ui-linkbutton ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only rc-more"><a href="/fund/motrescu-mayes-bursary-in-media-and-visual-studies-2026"><span class="ui-button-text ui-c"></span></a></span><script id="rf:searchResults:200:j_idt224_s" type="text/javascript" nonce="NDdkMmFjYjUtNzMwNy00OTI5LWI2Y2MtYzkyODE4MTZlMzlj">PrimeFaces.cw("LinkButton","widget_rf_searchResults_200_j_idt224",{id:"rf:searchResults:200:j_idt224"});</script>
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </div></li><li class="ui-dataview-row">
+
+    <div class="card result-card" style="position:relative;">
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+
+
+
+        <div class="rc-title">
+            <div class="rc-funder">
+                Wolfson College
+            </div>
+            <h3 class="rc-fund">
+                Wolfson College Joseph Petty Bursary
+            </h3>
+            <div class="rc-year-value">
+
+                
+
+                
+                    
+                
+
+                <div class="rc-value"><span class="">£1,000</span>
+                    (annual)
+                
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="rc-funder-logo"><div id="rf:searchResults:201:j_idt195:j_idt196" class="ui-outputpanel ui-widget provider-logo provider-logo-small-rec "><img id="rf:searchResults:201:j_idt195:j_idt197" src="/javax.faces.resource/dynamiccontent.properties.xhtml?ln=primefaces&amp;v=8.0&amp;pfdrid=24e6b6ef59708eda7150df2bfbc7d47c&amp;pfdrt=sc&amp;providerId=WC&amp;pfdrid_c=false&amp;uid=2ffd19f1-69d8-4a30-861f-b70966a28266" alt="" /></div>
+        </div>
+
+
+
+        <div class="rc-summary"><table cellpadding="4">
+<tbody>
+<tr>
+<td><div id="rf:searchResults:201:j_idt201" class="ui-outputpanel ui-widget rc-key">
+                    <i class="far fa-calendar-alt fa-lg"></i></div></td>
+<td><div id="rf:searchResults:201:j_idt203" class="ui-outputpanel ui-widget rc-val">
+                    Closes:
+                    
+            Same as funding deadline for the course
+        </div></td>
+</tr>
+<tr>
+<td><div id="rf:searchResults:201:j_idt217" class="ui-outputpanel ui-widget rc-key">
+                    <i class="fas fa-check-double fa-lg"></i></div></td>
+<td><div id="rf:searchResults:201:j_idt219" class="ui-outputpanel ui-widget rc-val">
+                    Eligibility:
+                    
+                    
+                    
+                        <span class="pgf-tag pgf-tag2">Department or School</span>
+                        <span class="pgf-tag pgf-tag2">College</span>
+                        <span class="pgf-tag pgf-tag2">Other e.g. research area</span></div></td>
+</tr>
+</tbody>
+</table>
+
+
+        </div><span id="rf:searchResults:201:j_idt224" class="ui-linkbutton ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only rc-more"><a href="/fund/wolfson-college-joseph-petty-bursary-in-criminology-2026"><span class="ui-button-text ui-c"></span></a></span><script id="rf:searchResults:201:j_idt224_s" type="text/javascript" nonce="NDdkMmFjYjUtNzMwNy00OTI5LWI2Y2MtYzkyODE4MTZlMzlj">PrimeFaces.cw("LinkButton","widget_rf_searchResults_201_j_idt224",{id:"rf:searchResults:201:j_idt224"});</script>
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </div></li><li class="ui-dataview-row">
+
+    <div class="card result-card" style="position:relative;">
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+
+
+
+        <div class="rc-title">
+            <div class="rc-funder">
+                Clare Hall
+            </div>
+            <h3 class="rc-fund">
+                Chibnall Bursary
+            </h3>
+            <div class="rc-year-value">
+
+                
+
+                
+                    
+                
+
+                <div class="rc-value"><span class="">£1,000</span>
+                    (one-off)
+                
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="rc-funder-logo"><div id="rf:searchResults:202:j_idt195:j_idt196" class="ui-outputpanel ui-widget provider-logo provider-logo-small-rec "><img id="rf:searchResults:202:j_idt195:j_idt197" src="/javax.faces.resource/dynamiccontent.properties.xhtml?ln=primefaces&amp;v=8.0&amp;pfdrid=24e6b6ef59708eda7150df2bfbc7d47c&amp;pfdrt=sc&amp;providerId=CH&amp;pfdrid_c=false&amp;uid=5f16f4cc-58a5-4c7d-a8bd-a9ff0d58e548" alt="" /></div>
+        </div>
+
+
+
+        <div class="rc-summary"><table cellpadding="4">
+<tbody>
+<tr>
+<td><div id="rf:searchResults:202:j_idt201" class="ui-outputpanel ui-widget rc-key">
+                    <i class="far fa-calendar-alt fa-lg"></i></div></td>
+<td><div id="rf:searchResults:202:j_idt203" class="ui-outputpanel ui-widget rc-val">
+                    Closes:
+                    
+            Same as funding deadline for the course
+        </div></td>
+</tr>
+<tr>
+<td><div id="rf:searchResults:202:j_idt217" class="ui-outputpanel ui-widget rc-key">
+                    <i class="fas fa-check-double fa-lg"></i></div></td>
+<td><div id="rf:searchResults:202:j_idt219" class="ui-outputpanel ui-widget rc-val">
+                    Eligibility:
+                    
+                    
+                    
+                        <span class="pgf-tag pgf-tag2">College</span>
+                        <span class="pgf-tag pgf-tag2">Other e.g. research area</span></div></td>
+</tr>
+</tbody>
+</table>
+
+
+        </div><span id="rf:searchResults:202:j_idt224" class="ui-linkbutton ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only rc-more"><a href="/fund/chibnall-bursary-2026"><span class="ui-button-text ui-c"></span></a></span><script id="rf:searchResults:202:j_idt224_s" type="text/javascript" nonce="NDdkMmFjYjUtNzMwNy00OTI5LWI2Y2MtYzkyODE4MTZlMzlj">PrimeFaces.cw("LinkButton","widget_rf_searchResults_202_j_idt224",{id:"rf:searchResults:202:j_idt224"});</script>
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </div></li><li class="ui-dataview-row">
+
+    <div class="card result-card" style="position:relative;">
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+
+
+
+        <div class="rc-title">
+            <div class="rc-funder">
+                Clare Hall
+            </div>
+            <h3 class="rc-fund">
+                Professor Peter Brown Memorial Bursary
+            </h3>
+            <div class="rc-year-value">
+
+                
+
+                
+                    
+                
+
+                <div class="rc-value"><span class="">£1,000</span>
+                    (one-off)
+                
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="rc-funder-logo"><div id="rf:searchResults:203:j_idt195:j_idt196" class="ui-outputpanel ui-widget provider-logo provider-logo-small-rec "><img id="rf:searchResults:203:j_idt195:j_idt197" src="/javax.faces.resource/dynamiccontent.properties.xhtml?ln=primefaces&amp;v=8.0&amp;pfdrid=24e6b6ef59708eda7150df2bfbc7d47c&amp;pfdrt=sc&amp;providerId=CH&amp;pfdrid_c=false&amp;uid=6f6d5207-0178-4ff1-99bc-4a6615cab24f" alt="" /></div>
+        </div>
+
+
+
+        <div class="rc-summary"><table cellpadding="4">
+<tbody>
+<tr>
+<td><div id="rf:searchResults:203:j_idt201" class="ui-outputpanel ui-widget rc-key">
+                    <i class="far fa-calendar-alt fa-lg"></i></div></td>
+<td><div id="rf:searchResults:203:j_idt203" class="ui-outputpanel ui-widget rc-val">
+                    Closes:
+                    
+            Same as funding deadline for the course
+        </div></td>
+</tr>
+<tr>
+<td><div id="rf:searchResults:203:j_idt217" class="ui-outputpanel ui-widget rc-key">
+                    <i class="fas fa-check-double fa-lg"></i></div></td>
+<td><div id="rf:searchResults:203:j_idt219" class="ui-outputpanel ui-widget rc-val">
+                    Eligibility:
+                    
+                    
+                    
+                        <span class="pgf-tag pgf-tag2">Department or School</span>
+                        <span class="pgf-tag pgf-tag2">College</span></div></td>
+</tr>
+</tbody>
+</table>
+
+
+        </div><span id="rf:searchResults:203:j_idt224" class="ui-linkbutton ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only rc-more"><a href="/fund/professor-peter-brown-memorial-bursary-2026"><span class="ui-button-text ui-c"></span></a></span><script id="rf:searchResults:203:j_idt224_s" type="text/javascript" nonce="NDdkMmFjYjUtNzMwNy00OTI5LWI2Y2MtYzkyODE4MTZlMzlj">PrimeFaces.cw("LinkButton","widget_rf_searchResults_203_j_idt224",{id:"rf:searchResults:203:j_idt224"});</script>
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </div></li><li class="ui-dataview-row">
+
+    <div class="card result-card" style="position:relative;">
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+
+
+
+        <div class="rc-title">
+            <div class="rc-funder">
+                Clare Hall
+            </div>
+            <h3 class="rc-fund">
+                Coales Bursary
+            </h3>
+            <div class="rc-year-value">
+
+                
+
+                
+                    
+                
+
+                <div class="rc-value"><span class="">£500</span>
+                    (one-off)
+                
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="rc-funder-logo"><div id="rf:searchResults:204:j_idt195:j_idt196" class="ui-outputpanel ui-widget provider-logo provider-logo-small-rec "><img id="rf:searchResults:204:j_idt195:j_idt197" src="/javax.faces.resource/dynamiccontent.properties.xhtml?ln=primefaces&amp;v=8.0&amp;pfdrid=24e6b6ef59708eda7150df2bfbc7d47c&amp;pfdrt=sc&amp;providerId=CH&amp;pfdrid_c=false&amp;uid=9320ea7d-15e4-4da8-9362-955d0822e30a" alt="" /></div>
+        </div>
+
+
+
+        <div class="rc-summary"><table cellpadding="4">
+<tbody>
+<tr>
+<td><div id="rf:searchResults:204:j_idt201" class="ui-outputpanel ui-widget rc-key">
+                    <i class="far fa-calendar-alt fa-lg"></i></div></td>
+<td><div id="rf:searchResults:204:j_idt203" class="ui-outputpanel ui-widget rc-val">
+                    Closes:
+                    
+            Same as funding deadline for the course
+        </div></td>
+</tr>
+<tr>
+<td><div id="rf:searchResults:204:j_idt217" class="ui-outputpanel ui-widget rc-key">
+                    <i class="fas fa-check-double fa-lg"></i></div></td>
+<td><div id="rf:searchResults:204:j_idt219" class="ui-outputpanel ui-widget rc-val">
+                    Eligibility:
+                    
+                    
+                    
+                        <span class="pgf-tag pgf-tag2">College</span></div></td>
+</tr>
+</tbody>
+</table>
+
+
+        </div><span id="rf:searchResults:204:j_idt224" class="ui-linkbutton ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only rc-more"><a href="/fund/coales-bursary-2026"><span class="ui-button-text ui-c"></span></a></span><script id="rf:searchResults:204:j_idt224_s" type="text/javascript" nonce="NDdkMmFjYjUtNzMwNy00OTI5LWI2Y2MtYzkyODE4MTZlMzlj">PrimeFaces.cw("LinkButton","widget_rf_searchResults_204_j_idt224",{id:"rf:searchResults:204:j_idt224"});</script>
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </div></li><li class="ui-dataview-row">
+
+    <div class="card result-card" style="position:relative;">
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+        
+
+
+
+        <div class="rc-title">
+            <div class="rc-funder">
+                Trinity College
+            </div>
+            <h3 class="rc-fund">
+                Trinity Overseas Bursary
+            </h3>
+            <div class="rc-year-value">
+
+                
+
+                
+                    
+                
+
+                <div class="rc-value">
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="rc-funder-logo"><div id="rf:searchResults:205:j_idt195:j_idt196" class="ui-outputpanel ui-widget provider-logo provider-logo-small-rec "><img id="rf:searchResults:205:j_idt195:j_idt197" src="/javax.faces.resource/dynamiccontent.properties.xhtml?ln=primefaces&amp;v=8.0&amp;pfdrid=24e6b6ef59708eda7150df2bfbc7d47c&amp;pfdrt=sc&amp;providerId=TC&amp;pfdrid_c=false&amp;uid=8f16c663-e3a5-4ba0-b4d8-8d2e33510a77" alt="" /></div>
+        </div>
+
+
+
+        <div class="rc-summary"><table cellpadding="4">
+<tbody>
+<tr>
+<td><div id="rf:searchResults:205:j_idt201" class="ui-outputpanel ui-widget rc-key">
+                    <i class="far fa-calendar-alt fa-lg"></i></div></td>
+<td><div id="rf:searchResults:205:j_idt203" class="ui-outputpanel ui-widget rc-val">
+                    Closes:
+                    View fund for details</div></td>
+</tr>
+<tr>
+<td><div id="rf:searchResults:205:j_idt217" class="ui-outputpanel ui-widget rc-key">
+                    <i class="fas fa-check-double fa-lg"></i></div></td>
+<td><div id="rf:searchResults:205:j_idt219" class="ui-outputpanel ui-widget rc-val">
+                    Eligibility:
+                    
+                    
+                    
+                        <span class="pgf-tag pgf-tag2">Fee Status</span>
+                        <span class="pgf-tag pgf-tag2">College</span></div></td>
+</tr>
+</tbody>
+</table>
+
+
+        </div><span id="rf:searchResults:205:j_idt224" class="ui-linkbutton ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only rc-more"><a href="/fund/trinity-overseas-bursary-2026"><span class="ui-button-text ui-c"></span></a></span><script id="rf:searchResults:205:j_idt224_s" type="text/javascript" nonce="NDdkMmFjYjUtNzMwNy00OTI5LWI2Y2MtYzkyODE4MTZlMzlj">PrimeFaces.cw("LinkButton","widget_rf_searchResults_205_j_idt224",{id:"rf:searchResults:205:j_idt224"});</script>
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    </div></li>]]></update><update id="j_id1:javax.faces.ViewState:0"><![CDATA[-6470052041631865256:-8290047414892695705]]></update><eval><![CDATA[PrimeFaces.csp.init('NDdkMmFjYjUtNzMwNy00OTI5LWI2Y2MtYzkyODE4MTZlMzlj');;]]></eval></changes></partial-response>

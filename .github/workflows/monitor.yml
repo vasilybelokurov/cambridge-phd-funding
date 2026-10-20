@@ -1,0 +1,55 @@
+name: Cambridge PhD Funding Monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 8 * * *"
+      timezone: "Europe/London"
+
+permissions:
+  contents: write   # commit data/registry.json and docs/index.html back
+  issues: write
+
+concurrency:
+  group: cambridge-funding
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Offline tests
+        run: python -m pytest -q
+
+      - name: Scrape, diff, notify
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          DASHBOARD_URL: ${{ vars.DASHBOARD_URL }}
+        run: python -m camfund run
+
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name "camfund-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ docs/
+          git diff --cached --quiet || git commit -m "Funding monitor run $(date -u +%F)"
+          git push

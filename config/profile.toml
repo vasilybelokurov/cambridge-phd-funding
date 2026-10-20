@@ -1,0 +1,29 @@
+# Search profile for the Cambridge PhD funding monitor.
+
+award_year = "2027/28"        # must match a label offered by student-funding.cam.ac.uk
+qualification = "PHD"         # PHD | MST
+fee_statuses = ["Home", "Overseas"]   # verdicts are computed separately for each
+
+# Days-before-deadline thresholds that trigger a DEADLINE_SOON alert (each fires once).
+alert_days = [30, 14, 7, 2]
+
+# Target programmes. An award covers a programme when its department list (if any)
+# contains `department` or one of `parents`, AND its course list (if any) contains `course`.
+# `code` is the Postgraduate Course Directory code, used for course deadlines.
+[[programmes]]
+course = "PhD in Astronomy"
+code = "pcaspdpay"
+department = "Institute of Astronomy"
+parents = ["School of the Physical Sciences", "Faculty of Physics and Chemistry"]
+
+[[programmes]]
+course = "PhD in Physics"
+code = "pcphpdphy"
+department = "Department of Physics"
+parents = ["School of the Physical Sciences", "Faculty of Physics and Chemistry"]
+
+[[programmes]]
+course = "PhD in Applied Mathematics and Theoretical Physics"
+code = "maampdmtp"
+department = "Department of Applied Mathematics and Theoretical Physics"
+parents = ["School of the Physical Sciences", "Faculty of Mathematics"]

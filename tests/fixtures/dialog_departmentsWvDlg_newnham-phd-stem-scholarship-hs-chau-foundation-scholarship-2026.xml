@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<partial-response><changes><update id="rf:j_idt589:departmentsWvDlg"><![CDATA[<div id="rf:j_idt589:j_idt597" class="ui-outputpanel ui-widget pgf-simple-list sdfsdf" style="margin: 2em">
+                <ul>
+                        <li>Animal Health Trust</li>
+                        <li>Babraham Research Institute</li>
+                        <li>British Antarctic Survey</li>
+                        <li>Cambridge Crystallography Data Centre</li>
+                        <li>Cambridge Institute for Medical Research</li>
+                        <li>Cancer Research UK Cambridge Institute</li>
+                        <li>Clinical Pharmacology Unit</li>
+                        <li>Department of Applied Mathematics and Theoretical Physics</li>
+                        <li>Department of Biochemistry</li>
+                        <li>Department of Chemical Engineering and Biotechnology</li>
+                        <li>Department of Chemistry</li>
+                        <li>Department of Clinical Biochemistry</li>
+                        <li>Department of Clinical Neurosciences</li>
+                        <li>Department of Computer Science and Technology</li>
+                        <li>Department of Earth Sciences</li>
+                        <li>Department of Engineering</li>
+                        <li>Department of Genetics</li>
+                        <li>Department of Geography</li>
+                        <li>Department of Haematology</li>
+                        <li>Department of Materials Science and Metallurgy</li>
+                        <li>Department of Medical Genetics</li>
+                        <li>Department of Medicine</li>
+                        <li>Department of Obstetrics &amp; Gynaecology</li>
+                        <li>Department of Oncology</li>
+                        <li>Department of Paediatrics</li>
+                        <li>Department of Pathology</li>
+                        <li>Department of Pharmacology</li>
+                        <li>Department of Physics</li>
+                        <li>Department of Physiology, Development and Neuroscience</li>
+                        <li>Department of Plant Sciences</li>
+                        <li>Department of Psychiatry</li>
+                        <li>Department of Psychology</li>
+                        <li>Department of Public Health and Primary Care</li>
+                        <li>Department of Pure Mathematics and Mathematical Statistics</li>
+                        <li>Department of Radiology</li>
+                        <li>Department of Surgery</li>
+                        <li>Department of Veterinary Medicine</li>
+                        <li>Department of Zoology</li>
+                        <li>European Bioinformatics Institute</li>
+                        <li>Faculty of Biology</li>
+                        <li>Faculty of Clinical Medicine</li>
+                        <li>Faculty of Earth Sciences and Geography</li>
+                        <li>Faculty of Engineering</li>
+                        <li>Faculty of Mathematics</li>
+                        <li>Faculty of Physics and Chemistry</li>
+                        <li>Faculty of Veterinary Medicine</li>
+                        <li>Gurdon Institute</li>
+                        <li>Institute of Astronomy</li>
+                        <li>John van Geest Centre for Brain Repair</li>
+                        <li>MRC Biostatistics Unit</li>
+                        <li>MRC Cancer Unit</li>
+                        <li>MRC Cognition and Brain Sciences Unit</li>
+                        <li>MRC Epidemiology Unit</li>
+                        <li>MRC Institute of Metabolic Science</li>
+                        <li>MRC Laboratory of Molecular Biology</li>
+                        <li>MRC Mitochondrial Biology Unit</li>
+                        <li>MRC Toxicology Unit</li>
+                        <li>National Institute of Agricultural Botany</li>
+                        <li>School of Clinical Medicine</li>
+                        <li>School of Technology</li>
+                        <li>School of the Biological Sciences</li>
+                        <li>School of the Physical Sciences</li>
+                        <li>Scott Polar Research Institute</li>
+                        <li>Wellcome - Medical Research Council Cambridge Stem Cell Institute</li>
+                        <li>Wellcome Sanger Institute</li>
+                </ul></div>]]></update><update id="j_id1:javax.faces.ViewState:0"><![CDATA[-5658126616324340095:5668236685083499959]]></update><eval><![CDATA[PrimeFaces.csp.init('YzEyZGFkZDMtYmU3Yy00MWMxLWE1ZmUtMjJiN2E1MDgwOWQx');;]]></eval></changes></partial-response>

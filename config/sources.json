@@ -1,0 +1,565 @@
+[
+ {
+  "name": "Christ's College",
+  "code": "CHR",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.christs.cam.ac.uk/admissions/postgraduate-admissions/postgraduate-funding-opportunities",
+    "label": "Postgraduate funding opportunities",
+    "verified": true,
+    "note": "[kw hits=99]"
+   }
+  ]
+ },
+ {
+  "name": "Churchill College",
+  "code": "CHU",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.chu.cam.ac.uk/financial-support-finder/",
+    "label": "Financial support finder",
+    "verified": true,
+    "note": "Filterable list incl. postgraduate awards; mixed UG/PG [kw hits=6]"
+   },
+   {
+    "url": "https://www.chu.cam.ac.uk/postgraduate-study/",
+    "label": "Postgraduate admissions",
+    "verified": true,
+    "note": "General PG admissions page with funding section [kw hits=15]"
+   }
+  ]
+ },
+ {
+  "name": "Clare College",
+  "code": "CL",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.clare.cam.ac.uk/admissions-outreach/postgraduate-study/funding-your-studies",
+    "label": "Funding your postgraduate studies",
+    "verified": true,
+    "note": "[kw hits=16]"
+   }
+  ]
+ },
+ {
+  "name": "Clare Hall",
+  "code": "CLH",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.clarehall.cam.ac.uk/funding/",
+    "label": "Funding",
+    "verified": true,
+    "note": "[kw hits=57]"
+   }
+  ]
+ },
+ {
+  "name": "Corpus Christi College",
+  "code": "CC",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.corpus.cam.ac.uk/postgraduate-study/postgraduate-scholarships",
+    "label": "Postgraduate scholarships",
+    "verified": true,
+    "note": "[kw hits=34]"
+   },
+   {
+    "url": "https://www.corpus.cam.ac.uk/postgraduate-study/scholarships/postgraduate-fees-and-costs",
+    "label": "Postgraduate fees and costs",
+    "verified": true,
+    "note": "Costs page, few award mentions [kw hits=4]"
+   }
+  ]
+ },
+ {
+  "name": "Darwin College",
+  "code": "DAR",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.darwin.cam.ac.uk/study/awards/",
+    "label": "Awards and scholarships",
+    "verified": true,
+    "note": "[kw hits=129]"
+   }
+  ]
+ },
+ {
+  "name": "Downing College",
+  "code": "DOW",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.dow.cam.ac.uk/current-students/finances-bursaries-and-awards/college-support",
+    "label": "College support (incl. entry-level PG awards)",
+    "verified": true,
+    "note": "Linked from PG 'Apply to Downing' page as the College funding info; no dedicated prospective-PG funding page found [kw hits=56]"
+   },
+   {
+    "url": "https://www.dow.cam.ac.uk/current-students/finances-bursaries-and-awards/college-competitions-and-studentships",
+    "label": "College competitions and studentships",
+    "verified": true,
+    "note": "Mixed UG/PG, under current-students [kw hits=79]"
+   }
+  ]
+ },
+ {
+  "name": "Emmanuel College",
+  "code": "EM",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.emma.cam.ac.uk/admissions/postgraduates/funding",
+    "label": "Postgraduate funding",
+    "verified": true,
+    "note": "[kw hits=111]"
+   }
+  ]
+ },
+ {
+  "name": "Fitzwilliam College",
+  "code": "F",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.fitz.cam.ac.uk/pg-funding",
+    "label": "Postgraduate funding and financial support",
+    "verified": true,
+    "note": "[kw hits=108]"
+   }
+  ]
+ },
+ {
+  "name": "Girton College",
+  "code": "G",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.girton.cam.ac.uk/postgraduates/fees-and-funding",
+    "label": "Funding for prospective postgraduates",
+    "verified": true,
+    "note": "[kw hits=150]"
+   },
+   {
+    "url": "https://www.girton.cam.ac.uk/postgraduates/financial-support",
+    "label": "Postgraduate financial support",
+    "verified": true,
+    "note": "Mostly support for current students [kw hits=9]"
+   }
+  ]
+ },
+ {
+  "name": "Gonville and Caius College",
+  "code": "CAI",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.cai.cam.ac.uk/apply-caius/postgraduates/postgraduate-studentships",
+    "label": "Postgraduate studentships",
+    "verified": true,
+    "note": "[kw hits=69]"
+   },
+   {
+    "url": "https://www.cai.cam.ac.uk/apply-caius/postgraduates/postgraduate-costs-and-funding",
+    "label": "Postgraduate costs and funding",
+    "verified": true,
+    "note": "[kw hits=62]"
+   }
+  ]
+ },
+ {
+  "name": "Homerton College",
+  "code": "HO",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.homerton.cam.ac.uk/study-here/postgraduate-study/fees-funding",
+    "label": "Postgraduate fees and funding",
+    "verified": true,
+    "note": "[kw hits=47]"
+   }
+  ]
+ },
+ {
+  "name": "Hughes Hall",
+  "code": "HH",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.hughes.cam.ac.uk/applying/scholarships-bursaries/",
+    "label": "Scholarships and bursaries",
+    "verified": true,
+    "note": "[kw hits=97]"
+   }
+  ]
+ },
+ {
+  "name": "Jesus College",
+  "code": "JE",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.jesus.cam.ac.uk/college/postgraduate/finance-funding-costs-and-charges/scholarships-and-bursaries",
+    "label": "Postgraduate scholarships and bursaries",
+    "verified": true,
+    "note": "[kw hits=112]"
+   },
+   {
+    "url": "https://www.jesus.cam.ac.uk/college/postgraduate/finance-funding-costs-and-charges",
+    "label": "Postgraduate finance, funding, costs",
+    "verified": true,
+    "note": "[kw hits=26]"
+   }
+  ]
+ },
+ {
+  "name": "King's College",
+  "code": "K",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.kings.cam.ac.uk/study/graduate-study/graduate-funding",
+    "label": "Graduate funding",
+    "verified": true,
+    "note": "[kw hits=61]"
+   }
+  ]
+ },
+ {
+  "name": "Lucy Cavendish College",
+  "code": "LC",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.lucy.cam.ac.uk/study-us/postgraduates/scholarships-and-awards",
+    "label": "Postgraduate scholarships and awards",
+    "verified": true,
+    "note": "[kw hits=83]"
+   }
+  ]
+ },
+ {
+  "name": "Magdalene College",
+  "code": "M",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.magd.cam.ac.uk/study-magdalene/postgraduate-study/postgraduate-scholarships-and-bursaries",
+    "label": "Postgraduate scholarships and bursaries",
+    "verified": true,
+    "note": "[kw hits=97]"
+   }
+  ]
+ },
+ {
+  "name": "Murray Edwards College",
+  "code": "NH",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.murrayedwards.cam.ac.uk/study-us/postgraduates/postgraduate-funding",
+    "label": "Postgraduate funding",
+    "verified": false,
+    "note": "Linked from PG page but returns Drupal 403 (access denied) to curl and WebFetch; may be unpublished or restricted [kw hits=2]"
+   },
+   {
+    "url": "https://www.murrayedwards.cam.ac.uk/study-us/scholarships-awards",
+    "label": "Scholarships and awards",
+    "verified": true,
+    "note": "Mixed UG/PG awards page; working fallback [kw hits=94]"
+   }
+  ]
+ },
+ {
+  "name": "Newnham College",
+  "code": "N",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://newn.cam.ac.uk/study-here/postgraduates/funding-financial-support/postgraduate-scholarships",
+    "label": "Postgraduate scholarships",
+    "verified": true,
+    "note": "[kw hits=90]"
+   },
+   {
+    "url": "https://newn.cam.ac.uk/study-here/postgraduates/funding-financial-support",
+    "label": "Postgraduate funding and financial support",
+    "verified": true,
+    "note": "[kw hits=16]"
+   }
+  ]
+ },
+ {
+  "name": "Pembroke College",
+  "code": "PEM",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.pem.cam.ac.uk/study-here/postgraduate/funding-your-studies",
+    "label": "Funding your studies (PG)",
+    "verified": true,
+    "note": "[kw hits=36]"
+   },
+   {
+    "url": "https://www.pem.cam.ac.uk/current-students/finance-information/financial-support-available/postgraduate-specific-support-4",
+    "label": "Postgraduate specific support",
+    "verified": true,
+    "note": "Final URL after redirect from .../graduate-specific-support; '-4' slug may change [kw hits=35]"
+   }
+  ]
+ },
+ {
+  "name": "Peterhouse",
+  "code": "PET",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.pet.cam.ac.uk/finance-postgraduate",
+    "label": "Postgraduate finance",
+    "verified": true,
+    "note": "[kw hits=24]"
+   },
+   {
+    "url": "https://www.pet.cam.ac.uk/research-studentships",
+    "label": "Research studentships",
+    "verified": true,
+    "note": "Redirect target of /peterhouse-postgraduate-studentships [kw hits=5]"
+   }
+  ]
+ },
+ {
+  "name": "Queens' College",
+  "code": "Q",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.queens.cam.ac.uk/applying-here/postgraduate-admissions/postgraduate-funding-and-scholarships/",
+    "label": "Funding, scholarships and awards for PG applicants",
+    "verified": true,
+    "note": "[kw hits=251]"
+   }
+  ]
+ },
+ {
+  "name": "Robinson College",
+  "code": "R",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.robinson.cam.ac.uk/prospective-students/postgraduate",
+    "label": "Postgraduate (incl. MPhil scholarships)",
+    "verified": true,
+    "note": "General PG page; funding info embedded [kw hits=19]"
+   },
+   {
+    "url": "https://www.robinson.cam.ac.uk/prospective-students/postgraduate/sykes-studentship",
+    "label": "Sykes Studentship",
+    "verified": true,
+    "note": "Award-specific [kw hits=17]"
+   }
+  ]
+ },
+ {
+  "name": "Selwyn College",
+  "code": "SE",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.sel.cam.ac.uk/joining-selwyn/graduates/funding",
+    "label": "Graduate funding",
+    "verified": true,
+    "note": "[kw hits=109]"
+   }
+  ]
+ },
+ {
+  "name": "Sidney Sussex College",
+  "code": "SID",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.sid.cam.ac.uk/apply/postgraduate-study/studentships-and-funding",
+    "label": "Postgraduate studentships and funding",
+    "verified": true,
+    "note": "[kw hits=96]"
+   }
+  ]
+ },
+ {
+  "name": "St Catharine's College",
+  "code": "CTH",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.caths.cam.ac.uk/study-us/postgraduate-study/prospectus",
+    "label": "Postgraduate prospectus (bursaries and scholarships section)",
+    "verified": true,
+    "note": "Site menu 'Postgraduate funding & financial support' redirects here (#tab-5). The dedicated page /study-us/postgraduate-study/applicant-financial-support returns 403 [kw hits=18]"
+   },
+   {
+    "url": "https://www.caths.cam.ac.uk/tunku-scholarships",
+    "label": "Tunku scholarships",
+    "verified": true,
+    "note": "Award-specific [kw hits=22]"
+   },
+   {
+    "url": "https://www.caths.cam.ac.uk/harding",
+    "label": "Harding Distinguished Postgraduate Scholars",
+    "verified": true,
+    "note": "Award-specific (PhD) [kw hits=22]"
+   }
+  ]
+ },
+ {
+  "name": "St Edmund's College",
+  "code": "ED",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.st-edmunds.cam.ac.uk/study-here/postgraduates/postgraduate-funding/",
+    "label": "Postgraduate funding",
+    "verified": true,
+    "note": "[kw hits=56]"
+   }
+  ]
+ },
+ {
+  "name": "St John's College",
+  "code": "JN",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.joh.cam.ac.uk/apply/financial-support/financial-support-for-postgraduates",
+    "label": "Financial support for postgraduates",
+    "verified": true,
+    "note": "Index of PG scholarships (Benefactors', Bradlow, Louis Cha, ...) [kw hits=12]"
+   },
+   {
+    "url": "https://www.joh.cam.ac.uk/apply/financial-support/financial-support-for-postgraduates/benefactors-scholarships",
+    "label": "Benefactors' Scholarships",
+    "verified": true,
+    "note": "Main PG scholarship [kw hits=39]"
+   }
+  ]
+ },
+ {
+  "name": "Trinity College",
+  "code": "T",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.trin.cam.ac.uk/postgraduate/funding-awards/",
+    "label": "Postgraduate funding awards",
+    "verified": true,
+    "note": "[kw hits=309]"
+   },
+   {
+    "url": "https://www.trin.cam.ac.uk/postgraduate/funding-and-finance/",
+    "label": "Postgraduate funding and finance",
+    "verified": true,
+    "note": "[kw hits=33]"
+   }
+  ]
+ },
+ {
+  "name": "Trinity Hall",
+  "code": "TH",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.trinhall.cam.ac.uk/study-with-us/postgraduate-study/postgraduate-research-studentships/",
+    "label": "Postgraduate research studentships",
+    "verified": true,
+    "note": "[kw hits=92]"
+   }
+  ]
+ },
+ {
+  "name": "Wolfson College",
+  "code": "W",
+  "kind": "college",
+  "urls": [
+   {
+    "url": "https://www.wolfson.cam.ac.uk/postgraduate-fees-funding",
+    "label": "Postgraduate fees and funding",
+    "verified": true,
+    "note": "[kw hits=215]"
+   }
+  ]
+ },
+ {
+  "name": "Institute of Astronomy",
+  "code": "PCAY",
+  "kind": "department",
+  "urls": [
+   {
+    "url": "https://www.ast.cam.ac.uk/students/prospective-students/postgraduate-applications-astronomy/phd-astronomy/funding-phd-students",
+    "label": "Funding for PhD students",
+    "verified": true,
+    "note": "[kw hits=21]"
+   },
+   {
+    "url": "https://www.ast.cam.ac.uk/students/prospective-students/postgraduate-applications-astronomy/phd-astronomy",
+    "label": "PhD in Astronomy (admissions)",
+    "verified": true,
+    "note": "[kw hits=15]"
+   }
+  ]
+ },
+ {
+  "name": "Department of Physics (Cavendish Laboratory)",
+  "code": "PCPH",
+  "kind": "department",
+  "urls": [
+   {
+    "url": "https://www.phy.cam.ac.uk/study/postgraduate/fees-and-funding/",
+    "label": "Postgraduate fees and funding",
+    "verified": true,
+    "note": "Generic <title>; content contains 'Funding opportunities' [kw hits=29]"
+   }
+  ]
+ },
+ {
+  "name": "DAMTP",
+  "code": "MAAM",
+  "kind": "department",
+  "urls": [
+   {
+    "url": "https://www.damtp.cam.ac.uk/jobs/studentships",
+    "label": "Currently available studentships",
+    "verified": true,
+    "note": "Currently says no studentships available; good change-detection target [kw hits=6]"
+   },
+   {
+    "url": "https://www.damtp.cam.ac.uk/externally-funded-opportunities",
+    "label": "Externally funded opportunities",
+    "verified": true,
+    "note": "[kw hits=4]"
+   },
+   {
+    "url": "https://www.maths.cam.ac.uk/postgrad/phd-applicant-faqs",
+    "label": "Maths Faculty PhD applicant FAQs (funding)",
+    "verified": true,
+    "note": "On maths.cam.ac.uk (Faculty of Mathematics); DAMTP PhD admissions are run by the Faculty [kw hits=12]"
+   }
+  ]
+ },
+ {
+  "name": "University of Cambridge Postgraduate Admissions",
+  "code": "UNI",
+  "kind": "university",
+  "urls": [
+   {
+    "url": "https://www.postgraduate.study.cam.ac.uk/funding",
+    "label": "Postgraduate funding overview",
+    "verified": true,
+    "note": "/funding-overview redirects here; no dedicated 'college funding' page found (/funding/college-funding and /colleges/college-funding are 404) [kw hits=87]"
+   }
+  ]
+ }
+]
