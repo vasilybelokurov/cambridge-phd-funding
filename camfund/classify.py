@@ -26,6 +26,7 @@ from .central import Award
 from .courses import CourseDates, parse_date
 
 SAME_AS_COURSE = re.compile(r"same as (the )?funding deadline", re.I)
+NO_FORM = re.compile(r"no additional application|no separate application|not required to (submit|complete)", re.I)
 AUTO_HINT = re.compile(r"automatically considered|no separate (funding )?application", re.I)
 # Heuristics for awards with no formal subject restriction (scope "open"):
 SUBJECT_OK = re.compile(
@@ -170,10 +171,11 @@ def assess(aw: Award, profile: Profile, courses: dict[str, CourseDates],
 
     # --- action ---------------------------------------------------------------
     notes = []
-    if aw.requires_additional_application or aw.additional_form:
+    form = aw.additional_form if aw.additional_form and not NO_FORM.search(aw.additional_form) else None
+    if aw.requires_additional_application or form:
         action = "separate"
-        if aw.additional_form:
-            notes.append(aw.additional_form)
+        if form:
+            notes.append(form)
     elif (aw.portal_questions or "").lower() == "yes":
         action = "portal"
         notes.append("Answer the award's questions in the Applicant Portal")
@@ -188,7 +190,9 @@ def assess(aw: Award, profile: Profile, courses: dict[str, CourseDates],
 
     # --- deadline -------------------------------------------------------------
     deadline, source = None, "none"
-    texts = [t for t in (aw.closes_text, aw.deadline_text) if t]
+    # an explicit date in a separate-application instruction ("apply directly ... by 18 Oct")
+    # takes precedence over the generic course deadline
+    texts = [t for t in (form if action == "separate" else None, aw.closes_text, aw.deadline_text) if t]
     for t in texts:
         d = parse_date(t)
         if d:

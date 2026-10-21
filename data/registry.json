@@ -9831,10 +9831,8 @@
   "harding-distinguished-postgraduate-scholars-programme-2026": {
    "alerts_sent": [],
    "assessment": {
-    "action": "separate",
-    "action_notes": [
-     "No additional application form or information is required."
-    ],
+    "action": "automatic",
+    "action_notes": [],
     "blockers": [],
     "deadline": "2026-12-08",
     "deadline_source": "course funding deadline",
@@ -14595,8 +14593,8 @@
      "Name St John's College as college preference (Applicant is NOT required to specify this College on their admissions application, but must be willing to transfer)"
     ],
     "blockers": [],
-    "deadline": "2027-01-06",
-    "deadline_source": "course funding deadline",
+    "deadline": "2026-10-18",
+    "deadline_source": "award",
     "programmes": [
      "PhD in Applied Mathematics and Theoretical Physics"
     ],
@@ -21076,10 +21074,8 @@
   "trinity-cambridge-research-studentships-2026": {
    "alerts_sent": [],
    "assessment": {
-    "action": "separate",
-    "action_notes": [
-     "No additional application form or information is required."
-    ],
+    "action": "automatic",
+    "action_notes": [],
     "blockers": [],
     "deadline": "2026-12-08",
     "deadline_source": "course funding deadline",

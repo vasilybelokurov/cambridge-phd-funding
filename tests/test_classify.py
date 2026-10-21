@@ -127,3 +127,19 @@ def test_subject_hint(profile, cds, title, other, hint):
     aw = load("trinity-internal-graduate-studentship-2026", title=title, other_eligibility=other, college_note=None)
     a = classify.assess(aw, profile, cds, TODAY)
     assert a.subject_scope == "open" and a.subject_hint == hint
+
+
+def test_no_additional_form_text_is_not_separate(profile, cds):
+    aw = load("stfc-doctoral-training-partnership-award-institute-of-astronomy-2026",
+              additional_form="No additional application form or information is required.")
+    a = classify.assess(aw, profile, cds, TODAY)
+    assert a.action == "automatic" and a.deadline == "2026-12-08"
+
+
+def test_separate_application_date_overrides_course_deadline(profile, cds):
+    aw = load("stfc-doctoral-training-partnership-award-institute-of-astronomy-2026",
+              additional_form="Applicants should apply directly to Martingale Foundation by the 18th October 2026",
+              requires_additional_application=True)
+    a = classify.assess(aw, profile, cds, TODAY)
+    assert a.action == "separate"
+    assert (a.deadline, a.deadline_source) == ("2026-10-18", "award")
