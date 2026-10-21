@@ -69,6 +69,7 @@ class Assessment:
     programmes: list[str]  # target courses covered
     subject_scope: str  # "explicit" | "open" | "none"
     subject_hint: str | None  # "other" if an open award looks aimed at another field
+    college_rule: str | None  # preference | accepted | member | any | None (no college condition)
     verdict: dict[str, str]  # fee status -> confirmed|possible|no
     reasons: list[str]  # why "possible"
     blockers: list[str]  # why "no"
@@ -83,6 +84,29 @@ class Assessment:
 
 
 _LEVEL = {"PHD": "PhD", "MST": "Masters"}
+
+
+def college_rule(note: str | None) -> str | None:
+    """Classify the database's college tooltip.
+
+    Observed wordings (2026-10-20):
+    'Applicant is required to specify this College as their first or second preference ...' -> preference
+    'Applicant must have been accepted by this College'                                       -> accepted
+    'Applicant must already be a member of this College'                                      -> member
+    'Applicant is NOT required to specify this College ..., but must be willing to transfer'  -> any
+    """
+    n = (note or "").lower()
+    if not n:
+        return None
+    if "not required to specify" in n or "willing to transfer" in n:
+        return "any"
+    if "required to specify" in n or "preference" in n:
+        return "preference"
+    if "already be a member" in n:
+        return "member"
+    if "accepted by" in n:
+        return "accepted"
+    return "other"
 
 
 def _covers(aw: Award, p: Programme) -> bool:
@@ -183,10 +207,15 @@ def assess(aw: Award, profile: Profile, courses: dict[str, CourseDates],
         action = "automatic"
         if aw.about and AUTO_HINT.search(aw.about):
             notes.append("Funder states eligible applicants are considered automatically")
-    if "first or second preference" in note or "required to specify" in note:
-        notes.append(f"Name {aw.college} as college preference ({aw.college_note})")
-    elif "willing to transfer" in note:
-        notes.append(f"Must be willing to transfer to {aw.college}")
+    rule = college_rule(aw.college_note)
+    if rule == "preference":
+        notes.append(f"Name {aw.college} as 1st or 2nd college preference in the application")
+    elif rule == "accepted":
+        notes.append(f"Considered only if the applicant is accepted by {aw.college}")
+    elif rule == "member":
+        notes.append(f"Only for existing members of {aw.college}")
+    elif rule == "any":
+        notes.append(f"Any college preference; must be willing to transfer to {aw.college}")
 
     # --- deadline -------------------------------------------------------------
     deadline, source = None, "none"
@@ -210,6 +239,7 @@ def assess(aw: Award, profile: Profile, courses: dict[str, CourseDates],
         programmes=progs,
         subject_scope=scope,
         subject_hint=subject_hint,
+        college_rule=rule,
         verdict=verdict,
         reasons=reasons,
         blockers=blockers,

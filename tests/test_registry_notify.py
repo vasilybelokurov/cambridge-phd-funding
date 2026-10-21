@@ -22,7 +22,7 @@ def rec(slug="a-2026", **kw):
 def ass(relevant=True, deadline="2026-12-08", **kw):
     a = {"programmes": ["PhD in Astronomy"], "subject_scope": "explicit",
          "verdict": {"Home": "confirmed" if relevant else "no", "Overseas": "confirmed" if relevant else "no"},
-         "subject_hint": None, "reasons": [], "blockers": [], "action": "automatic", "action_notes": [], "deadline": deadline,
+         "subject_hint": None, "college_rule": None, "reasons": [], "blockers": [], "action": "automatic", "action_notes": [], "deadline": deadline,
          "deadline_source": "course funding deadline", "relevant": relevant}
     a.update(kw)
     return a

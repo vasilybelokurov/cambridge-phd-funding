@@ -143,3 +143,25 @@ def test_separate_application_date_overrides_course_deadline(profile, cds):
     a = classify.assess(aw, profile, cds, TODAY)
     assert a.action == "separate"
     assert (a.deadline, a.deadline_source) == ("2026-10-18", "award")
+
+
+@pytest.mark.parametrize("slug,rule,note_part", [
+    ("tunku-abdul-rahman-scholarship-2026", "preference", "1st or 2nd college preference"),
+    ("churchill-college-frank-hahn-studentship-2026", "any", "Any college preference"),
+    ("newnham-phd-stem-scholarship-hs-chau-foundation-scholarship-2026", "any", "willing to transfer"),
+    ("trinity-internal-graduate-studentship-2026", "member", "existing members"),
+    ("stfc-doctoral-training-partnership-award-institute-of-astronomy-2026", None, None),
+])
+def test_college_rule_from_real_tooltips(profile, cds, slug, rule, note_part):
+    a = classify.assess(load(slug), profile, cds, TODAY)
+    assert a.college_rule == rule
+    if note_part:
+        assert any(note_part in n for n in a.action_notes)
+    # "NOT required to specify" must never produce a preference instruction
+    if rule == "any":
+        assert not any("1st or 2nd" in n for n in a.action_notes)
+
+
+def test_college_rule_accepted():
+    assert classify.college_rule("Applicant must have been accepted by this College") == "accepted"
+    assert classify.college_rule(None) is None

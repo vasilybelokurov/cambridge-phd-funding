@@ -20,7 +20,7 @@ def rows(reg: dict, include_irrelevant: bool = False) -> list[dict]:
             "fee_status": r.get("fee_status") or [], "verdict": a["verdict"], "action": a["action"],
             "deadline": a["deadline"], "deadline_source": a["deadline_source"],
             "deadline_text": r.get("deadline_text") or r.get("closes_text") or "",
-            "programmes": a["programmes"], "scope": a["subject_scope"], "hint": a.get("subject_hint"), "reasons": a["reasons"],
+            "programmes": a["programmes"], "scope": a["subject_scope"], "hint": a.get("subject_hint"), "crule": a.get("college_rule"), "reasons": a["reasons"],
             "notes": a["action_notes"], "url": r["url"], "website": r.get("website") or "",
             "status": e["status"], "first_seen": e["first_seen"], "issue": e.get("issue"),
         })
@@ -89,6 +89,7 @@ input[type=search]{flex:1;min-width:180px}
 .right{text-align:right;white-space:nowrap}.dl{font-weight:600}.dl.soon{color:var(--no)}
 .pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;margin:2px 4px 0 0;border:1px solid var(--line)}
 .confirmed{background:var(--ok-bg);color:var(--ok);border-color:transparent}.possible{background:var(--maybe-bg);color:var(--maybe);border-color:transparent}
+.act-automatic{border-color:var(--ok)}.act-portal{border-color:var(--acc)}.act-separate{border-color:var(--no);font-weight:600}
 .no{background:var(--no-bg);color:var(--no);border-color:transparent}
 details{grid-column:1/-1;font-size:13.5px}summary{cursor:pointer;color:var(--muted)}ul{margin:6px 0;padding-left:18px}
 table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13.5px}
@@ -104,6 +105,10 @@ th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);verti
 <label>Fee status <select id="fs"></select></label>
 <label>Verdict <select id="vd"><option value="any">confirmed + possible</option><option value="confirmed">confirmed only</option></select></label>
 <label>Action <select id="ac"><option value="">any</option><option value="automatic">automatic</option><option value="portal">Applicant Portal questions</option><option value="separate">separate application</option></select></label>
+<label>College condition <select id="cr"><option value="">any</option><option value="preference">must name college as 1st/2nd choice</option>
+<option value="accepted">only if accepted by the college</option><option value="any">any college (must transfer)</option>
+<option value="member">existing members only</option><option value="none">no college condition</option></select></label>
+<label>College <select id="co"></select></label>
 <label>Scope <select id="sc"><option value="">any</option><option value="explicit">lists our department/course</option><option value="open">open to all subjects</option></select></label>
 <label><input type="checkbox" id="oth"> include awards aimed at other research areas</label>
 <input type="search" id="q" placeholder="Search title, funder, college…">
@@ -131,13 +136,18 @@ const next=D.courses.map(c=>c.funding_deadline).filter(Boolean).sort()[0];
 $('#kpis').innerHTML=[[D.awards.length,'relevant awards'],[conf,'confirmed for ≥1 fee status'],[sep,'need a separate application'],
 [soon,'deadlines within 30 days'],[next?days(next)+' d':'—','to first course funding deadline'+(next?` (${next})`:'')]]
 .map(([b,s])=>`<div class="kpi"><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('');
+$('#co').innerHTML='<option value="">any</option>'+[...new Set(D.awards.map(a=>a.college).filter(Boolean))].sort().map(c=>`<option>${esc(c)}</option>`).join('');
+const CR={preference:['Name as 1st/2nd college choice','possible'],accepted:['Only if accepted by college','possible'],
+ member:['Existing members only','no'],any:['Any college (must transfer)','']};
+const crPill=a=>a.crule&&CR[a.crule]?`<span class="pill ${CR[a.crule][1]}" title="${esc(a.college)}">${esc(a.college)}: ${esc(CR[a.crule][0])}</span>`:'';
 const ACT={automatic:'automatic (course application)',portal:'Applicant Portal questions',separate:'separate application'};
 function render(){
- const oth=$('#oth').checked,fs=$('#fs').value,vd=$('#vd').value,ac=$('#ac').value,sc=$('#sc').value,q=$('#q').value.toLowerCase();
+ const cr=$('#cr').value,co=$('#co').value,oth=$('#oth').checked,fs=$('#fs').value,vd=$('#vd').value,ac=$('#ac').value,sc=$('#sc').value,q=$('#q').value.toLowerCase();
  const xs=D.awards.filter(a=>{
   const vs=fs?[a.verdict[fs]]:Object.values(a.verdict);
   if(!vs.some(v=>vd==='confirmed'?v==='confirmed':v!=='no'))return false;
   if(!oth&&a.hint==='other')return false;
+  if(cr&&(a.crule||'none')!==cr)return false; if(co&&a.college!==co)return false;
   if(ac&&a.action!==ac)return false; if(sc&&a.scope!==sc)return false;
   return !q||(a.title+' '+a.funder+' '+a.college).toLowerCase().includes(q);});
  $('#count').textContent=`${xs.length} shown`;
@@ -145,7 +155,7 @@ function render(){
   return `<div class="aw"><div><h3><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a></h3>
   <div class="meta">${esc(a.funder)}${a.college&&a.college!==a.funder?' · '+esc(a.college):''} · ${esc(a.value||'value not stated')}</div>
   <div>${Object.entries(a.verdict).map(([k,v])=>`<span class="pill ${v}">${esc(k)}: ${v}</span>`).join('')}
-  <span class="pill">${esc(ACT[a.action])}</span>${a.scope==='open'?'<span class="pill">all subjects</span>':''}${a.hint==='other'?'<span class="pill no">other research area?</span>':''}
+  <span class="pill act-${a.action}">${esc(ACT[a.action])}</span>${crPill(a)}${a.scope==='open'?'<span class="pill">all subjects</span>':''}${a.hint==='other'?'<span class="pill no">other research area?</span>':''}
   ${a.status==='missing'?'<span class="pill no">possibly withdrawn</span>':''}</div></div>
   <div class="right"><div class="dl ${n!==null&&n<=14?'soon':''}">${a.deadline?esc(a.deadline):'—'}</div>
   <div class="meta">${n===null?esc(a.deadline_text).slice(0,60):(n<0?'passed':n+' days')}${a.deadline_source==='course funding deadline'?' · course deadline':''}</div></div>
@@ -154,7 +164,7 @@ function render(){
    ${a.website?`<a href="${esc(a.website)}" target="_blank" rel="noopener">Funder page</a>`:''}
    ${a.issue&&D.repo?` · <a href="https://github.com/${esc(D.repo)}/issues/${a.issue}" target="_blank" rel="noopener">Issue #${a.issue}</a>`:''}</details></div>`}).join('');
 }
-['#fs','#vd','#ac','#sc','#q','#oth'].forEach(s=>$(s).addEventListener('input',render));render();
+['#fs','#vd','#ac','#sc','#q','#oth','#cr','#co'].forEach(s=>$(s).addEventListener('input',render));render();
 $('#courses').innerHTML='<tr><th>Course</th><th>Intake</th><th>Application deadline</th><th>Funding deadline</th></tr>'+
  D.courses.map(c=>`<tr><td><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.name)}</a></td><td>${esc(c.intake)}</td>
  <td>${esc(c.application_deadline||'—')}</td><td><b>${esc(c.funding_deadline||'—')}</b>${c.funding_deadline?` (${days(c.funding_deadline)} d)`:''}</td></tr>`).join('');
