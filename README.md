@@ -66,6 +66,25 @@ Edit `config/profile.toml`: `award_year`, `fee_statuses`, and `[[programmes]]` (
 * **Not yet done:** SMTP secrets are not set, and the workflow has not been triggered. Its first run delivers the queued outbox: about 105 issues (one per relevant award plus one source-error issue) and one digest email.
 * Possible improvements to the summary boxes: reset other filters on click, highlight the active box, clear the filter on a second click.
 
+## Compared with the official Postgraduate Funding Search
+
+Checked 2026-10-21 against <https://www.student-funding.cam.ac.uk/> (public page only, not anything behind a login).
+
+The official site filters by award year, student status, study mode, qualification, nationality (up to 2), country of residence, department/school and college. It sorts by award value, closing date or last update. Its public page offers no saved searches, alerts or export.
+
+| | Official site | camfund |
+|---|---|---|
+| Change tracking | none; re-search by hand | daily diff: `NEW`, `CHANGED`, `MISSING`, `DEADLINE_SOON` (30/14/7/2 days), sent as issues and email |
+| "Same as funding deadline for the course" | text only | replaced with the real date from the Course Directory |
+| How to apply (automatic / portal / separate) | in free text | classified for each award and filterable |
+| College condition (preference / accepted / any / member) | in a tooltip | extracted and filterable |
+| Verdict per fee status | no | confirmed / possible / no for Home and Overseas |
+| Course-level match | department filter | listed courses and departments, plus flags for awards aimed at other research areas |
+| College and IoA/Physics/DAMTP pages | not covered | 53 pages watched for changes |
+| Export | no | CSV |
+
+The award facts come from the same database, so camfund adds no new data about the awards themselves. The only new sources are the college and department pages. Most of its value is in the alerts, the real course deadlines and the coverage of college pages. Without anyone acting on the alerts, the official site plus one careful read-through covers most of what is needed. The scraper depends on the site's PrimeFaces paginator, and the alert and email path has not run in production yet.
+
 ## Limits
 
 * Verdicts come from database fields only. Always confirm terms on the funder page.
