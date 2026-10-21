@@ -20,7 +20,20 @@ Output: a static dashboard (`docs/index.html`), a CSV (`data/awards.csv`), GitHu
 * **possible**: hard criteria are met, but something needs a human check (listed in the dashboard and the issue). Awards open to all subjects are never "confirmed". Open awards whose title or conditions point to another research area are flagged and hidden by default.
 * **no**: wrong subject, level, applicant type or fee status, or closed.
 
-Action: `automatic` (considered through the course application), `portal` (answer award questions in the Applicant Portal), `separate` (separate application or form).
+Action (application route): `automatic` (considered through the course application with "Yes – I wish to apply for funding" ticked), `portal` (select the award and answer its questions in the Applicant Portal), `separate` (funder's form, departmental nomination, or a form sent after an offer). Database text such as "No additional application form … required" does not count as separate; a date in a separate-application instruction overrides the course deadline.
+
+College condition (`college_rule`, from the database tooltip, independent of the route):
+`preference` (must name the college as 1st/2nd choice), `accepted` (considered only if accepted by the college),
+`any` ("NOT required to specify … must be willing to transfer"), `member` (existing members only), or none.
+
+## Dashboard
+
+<https://vasilybelokurov.github.io/cambridge-phd-funding/> (GitHub Pages from `main:/docs`, regenerated each run).
+
+* **Top:** headline counts; a "How students apply" summary with four clickable boxes (Automatic, Portal questions, Separate application, College choice matters). Clicking a box sets the matching filter on the award list and scrolls to it.
+* **Award cards:** verdict per fee status; one combined "how to apply" label (route + college condition, e.g. "Automatic — if accepted by Christ's College"); deadline and days left; a collapsible list of conditions and actions with links to the funder page and the GitHub issue.
+* **Filters:** fee status, verdict, action, college condition, college, subject scope, free-text search, and "include awards aimed at other research areas" (off by default).
+* **Bottom:** course deadlines, recent events, and status of the monitored college/department pages.
 
 Events: `NEW`, `CHANGED` (field-level diffs of tracked terms), `DEADLINE_SOON` (30/14/7/2 days, each fires once), `MISSING` (absent from the database for 2 runs), `PAGE_CHANGED`, `SOURCE_ERROR` (2 consecutive failures), `DISCOVERED`. Undelivered events stay in an outbox and are retried on the next run.
 
@@ -46,6 +59,12 @@ Useful flags: `--limit 20` (fetch only 20 award pages), `--skip-pages`, `--today
 ## Changing the profile
 
 Edit `config/profile.toml`: `award_year`, `fee_statuses`, and `[[programmes]]` (course name exactly as in the database, Course Directory code, department and parent units).
+
+## Status (2026-10-21)
+
+* Repo, Pages site and repository variable `DASHBOARD_URL` are set up. The data in `data/` comes from a local live run (206 awards, 104 relevant).
+* **Not yet done:** SMTP secrets are not set, and the workflow has not been triggered. Its first run delivers the queued outbox: about 105 issues (one per relevant award plus one source-error issue) and one digest email.
+* Possible improvements to the summary boxes: reset other filters on click, highlight the active box, clear the filter on a second click.
 
 ## Limits
 
