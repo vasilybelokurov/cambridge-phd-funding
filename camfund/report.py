@@ -94,18 +94,29 @@ input[type=search]{flex:1;min-width:180px}
 details{grid-column:1/-1;font-size:13.5px}summary{cursor:pointer;color:var(--muted)}ul{margin:6px 0;padding-left:18px}
 table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13.5px}
 th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
-.scroll{overflow-x:auto}.err{color:var(--no)}
+.scroll{overflow-x:auto}.small{font-size:13px}
+.routes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.route{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.route:hover{border-color:var(--acc)}.route b{font-size:20px;margin-right:6px}.route h3{display:inline;font-size:15px;margin:0}
+.route p{margin:4px 0 0;font-size:13.5px;color:var(--muted)}
+.route.r-automatic{border-left-color:var(--ok)}.route.r-portal{border-left-color:var(--acc)}.route.r-separate{border-left-color:var(--no)}
+.route.r-college{border-left-color:var(--maybe)}.err{color:var(--no)}
 @media (max-width:640px){.aw{grid-template-columns:1fr}.right{text-align:left}}
 </style></head><body><main>
 <h1>Cambridge PhD funding monitor</h1>
 <div class="muted" id="sub"></div>
 <div class="kpis" id="kpis"></div>
+<h2>How students apply</h2>
+<div class="routes" id="routes"></div>
+<p class="muted small">All routes start with the course application in the Applicant Portal, submitted by the course funding deadline
+with <b>“Yes – I wish to apply for funding”</b> ticked (<a href="https://www.postgraduate.study.cam.ac.uk/funding" target="_blank" rel="noopener">University guidance</a>).
+Click a box to filter the list.</p>
 <h2>Awards</h2>
 <div class="filters">
 <label>Fee status <select id="fs"></select></label>
 <label>Verdict <select id="vd"><option value="any">confirmed + possible</option><option value="confirmed">confirmed only</option></select></label>
 <label>Action <select id="ac"><option value="">any</option><option value="automatic">automatic</option><option value="portal">Applicant Portal questions</option><option value="separate">separate application</option></select></label>
-<label>College condition <select id="cr"><option value="">any</option><option value="preference">must name college as 1st/2nd choice</option>
+<label>College condition <select id="cr"><option value="">any</option><option value="matters">college choice matters (name it or be accepted)</option><option value="preference">must name college as 1st/2nd choice</option>
 <option value="accepted">only if accepted by the college</option><option value="any">any college (must transfer)</option>
 <option value="member">existing members only</option><option value="none">no college condition</option></select></label>
 <label>College <select id="co"></select></label>
@@ -147,7 +158,7 @@ function render(){
   const vs=fs?[a.verdict[fs]]:Object.values(a.verdict);
   if(!vs.some(v=>vd==='confirmed'?v==='confirmed':v!=='no'))return false;
   if(!oth&&a.hint==='other')return false;
-  if(cr&&(a.crule||'none')!==cr)return false; if(co&&a.college!==co)return false;
+  if(cr&&(cr==='matters'?!['preference','accepted'].includes(a.crule):(a.crule||'none')!==cr))return false; if(co&&a.college!==co)return false;
   if(ac&&a.action!==ac)return false; if(sc&&a.scope!==sc)return false;
   return !q||(a.title+' '+a.funder+' '+a.college).toLowerCase().includes(q);});
  $('#count').textContent=`${xs.length} shown`;
@@ -164,6 +175,16 @@ function render(){
    ${a.website?`<a href="${esc(a.website)}" target="_blank" rel="noopener">Funder page</a>`:''}
    ${a.issue&&D.repo?` · <a href="https://github.com/${esc(D.repo)}/issues/${a.issue}" target="_blank" rel="noopener">Issue #${a.issue}</a>`:''}</details></div>`}).join('');
 }
+const vis=D.awards.filter(a=>a.hint!=='other');
+const nAct=k=>vis.filter(a=>a.action===k).length, nCr=k=>vis.filter(a=>a.crule===k).length;
+const ROUTES=[
+ ['automatic','r-automatic','Automatic','Nothing beyond ticking the funding box. Eligible applicants are considered from the course application (e.g. STFC, Isaac Newton, Vice-Chancellor’s awards).',nAct('automatic'),['#ac','automatic']],
+ ['portal','r-portal','Portal questions','In the same application, select the award in the funding section and answer its extra questions (e.g. Gates, most Cambridge Trust and college studentships).',nAct('portal'),['#ac','portal']],
+ ['separate','r-separate','Separate application','Apply outside the portal: funder’s own form, departmental nomination, or a form sent after an offer. Check the award’s own deadline.',nAct('separate'),['#ac','separate']],
+ ['college','r-college','College choice matters',`${nCr('preference')} awards require naming the college as 1st/2nd preference; ${nCr('accepted')} consider only students accepted by that college; ${nCr('any')} are open whatever the preference (must be willing to transfer).`,nCr('preference')+nCr('accepted'),null]];
+$('#routes').innerHTML=ROUTES.map(([k,c,t,p,n])=>`<div class="route ${c}" data-k="${k}"><b>${n}</b><h3>${t}</h3><p>${p}</p></div>`).join('');
+$('#routes').addEventListener('click',ev=>{const el=ev.target.closest('.route');if(!el)return;const k=el.dataset.k;
+ $('#ac').value=k==='college'?'':k;$('#cr').value=k==='college'?'matters':'';render();$('#list').scrollIntoView({behavior:'smooth'});});
 ['#fs','#vd','#ac','#sc','#q','#oth','#cr','#co'].forEach(s=>$(s).addEventListener('input',render));render();
 $('#courses').innerHTML='<tr><th>Course</th><th>Intake</th><th>Application deadline</th><th>Funding deadline</th></tr>'+
  D.courses.map(c=>`<tr><td><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.name)}</a></td><td>${esc(c.intake)}</td>
