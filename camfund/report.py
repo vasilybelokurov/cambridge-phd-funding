@@ -110,7 +110,8 @@ th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);verti
 <div class="routes" id="routes"></div>
 <p class="muted small">All routes start with the course application in the Applicant Portal, submitted by the course funding deadline
 with <b>“Yes – I wish to apply for funding”</b> ticked (<a href="https://www.postgraduate.study.cam.ac.uk/funding" target="_blank" rel="noopener">University guidance</a>).
-Click a box to filter the list.</p>
+College conditions are independent of the route: each award shows one label combining both,
+e.g. “Automatic — if accepted by Christ’s College”. Click a box to filter the list.</p>
 <h2>Awards</h2>
 <div class="filters">
 <label>Fee status <select id="fs"></select></label>
@@ -148,9 +149,11 @@ $('#kpis').innerHTML=[[D.awards.length,'relevant awards'],[conf,'confirmed for �
 [soon,'deadlines within 30 days'],[next?days(next)+' d':'—','to first course funding deadline'+(next?` (${next})`:'')]]
 .map(([b,s])=>`<div class="kpi"><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('');
 $('#co').innerHTML='<option value="">any</option>'+[...new Set(D.awards.map(a=>a.college).filter(Boolean))].sort().map(c=>`<option>${esc(c)}</option>`).join('');
-const CR={preference:['Name as 1st/2nd college choice','possible'],accepted:['Only if accepted by college','possible'],
- member:['Existing members only','no'],any:['Any college (must transfer)','']};
-const crPill=a=>a.crule&&CR[a.crule]?`<span class="pill ${CR[a.crule][1]}" title="${esc(a.college)}">${esc(a.college)}: ${esc(CR[a.crule][0])}</span>`:'';
+const COND={preference:c=>`if you name ${c} as 1st/2nd choice`,accepted:c=>`if accepted by ${c}`,
+ member:c=>`existing ${c} members only`,any:c=>`any college preference; must transfer to ${c}`};
+const ROUTE={automatic:'Automatic',portal:'Portal questions',separate:'Separate application'};
+const howPill=a=>{const c=a.crule&&COND[a.crule]?' — '+COND[a.crule](a.college):'';
+ return `<span class="pill act-${a.action}" title="How to apply">${esc(ROUTE[a.action]+c)}</span>`;};
 const ACT={automatic:'automatic (course application)',portal:'Applicant Portal questions',separate:'separate application'};
 function render(){
  const cr=$('#cr').value,co=$('#co').value,oth=$('#oth').checked,fs=$('#fs').value,vd=$('#vd').value,ac=$('#ac').value,sc=$('#sc').value,q=$('#q').value.toLowerCase();
@@ -166,7 +169,7 @@ function render(){
   return `<div class="aw"><div><h3><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.title)}</a></h3>
   <div class="meta">${esc(a.funder)}${a.college&&a.college!==a.funder?' · '+esc(a.college):''} · ${esc(a.value||'value not stated')}</div>
   <div>${Object.entries(a.verdict).map(([k,v])=>`<span class="pill ${v}">${esc(k)}: ${v}</span>`).join('')}
-  <span class="pill act-${a.action}">${esc(ACT[a.action])}</span>${crPill(a)}${a.scope==='open'?'<span class="pill">all subjects</span>':''}${a.hint==='other'?'<span class="pill no">other research area?</span>':''}
+  ${howPill(a)}${a.scope==='open'?'<span class="pill">all subjects</span>':''}${a.hint==='other'?'<span class="pill no">other research area?</span>':''}
   ${a.status==='missing'?'<span class="pill no">possibly withdrawn</span>':''}</div></div>
   <div class="right"><div class="dl ${n!==null&&n<=14?'soon':''}">${a.deadline?esc(a.deadline):'—'}</div>
   <div class="meta">${n===null?esc(a.deadline_text).slice(0,60):(n<0?'passed':n+' days')}${a.deadline_source==='course funding deadline'?' · course deadline':''}</div></div>
@@ -177,8 +180,9 @@ function render(){
 }
 const vis=D.awards.filter(a=>a.hint!=='other');
 const nAct=k=>vis.filter(a=>a.action===k).length, nCr=k=>vis.filter(a=>a.crule===k).length;
+const nActCol=k=>vis.filter(a=>a.action===k&&['preference','accepted'].includes(a.crule)).length;
 const ROUTES=[
- ['automatic','r-automatic','Automatic','Nothing beyond ticking the funding box. Eligible applicants are considered from the course application (e.g. STFC, Isaac Newton, Vice-Chancellor’s awards).',nAct('automatic'),['#ac','automatic']],
+ ['automatic','r-automatic','Automatic',`Nothing beyond ticking the funding box. Eligible applicants are considered from the course application (e.g. STFC, Isaac Newton, Vice-Chancellor’s awards). ${nActCol('automatic')} of these are college awards that still depend on college choice.`,nAct('automatic'),['#ac','automatic']],
  ['portal','r-portal','Portal questions','In the same application, select the award in the funding section and answer its extra questions (e.g. Gates, most Cambridge Trust and college studentships).',nAct('portal'),['#ac','portal']],
  ['separate','r-separate','Separate application','Apply outside the portal: funder’s own form, departmental nomination, or a form sent after an offer. Check the award’s own deadline.',nAct('separate'),['#ac','separate']],
  ['college','r-college','College choice matters',`${nCr('preference')} awards require naming the college as 1st/2nd preference; ${nCr('accepted')} consider only students accepted by that college; ${nCr('any')} are open whatever the preference (must be willing to transfer).`,nCr('preference')+nCr('accepted'),null]];
